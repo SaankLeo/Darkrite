@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: darkrite
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      apt-get update
+      apt-get install -y ghostscript
+    startCommand: gunicorn app:app
+    plan: free
